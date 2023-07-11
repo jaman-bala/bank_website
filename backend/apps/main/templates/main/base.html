@@ -1,0 +1,175 @@
+{% load static %}{% load i18n %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="{% static './src/images/logo_sdb.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static './src/css/main.css' %}" />
+    <link rel="stylesheet" href="{% static './src/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static './src/css/main1.css' %}" />
+    <link rel="stylesheet" href="{% static './src/css/project.css' %}" />      
+    <link rel="stylesheet" href="{% static './src/css/navbar.css' %}" />      
+    <link rel="stylesheet" href="{% static './src/css/news.css' %}" />      
+    <link rel="stylesheet" href="{% static './src/css/main4.css' %}" />      
+    <link rel="stylesheet" href="{% static './src/css/disain.css' %}" />
+    <link rel="stylesheet" href="{% static './src/css/library.css' %}" />
+    <link rel="stylesheet" href="{% static './src/css/detail.css' %}" />       
+    <link rel="stylesheet" href="{% static './src/css/forms.css' %}" /> 
+    <link rel="stylesheet" href="{% static './src/css/footer.css' %}" />
+    <link rel="stylesheet" href="{% static './src/css/account.css' %}" />
+    <link rel="stylesheet" href="{% static './src/css/staff.css' %}" />
+    <link rel="stylesheet" href="{% static './src/css/gallery.css' %}" />
+    <link rel="stylesheet" href="{% static './src/css/tender.css' %}" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"> 
+    
+<title>ГЛАВНАЯ СТРАНИЦА</title>
+  </head>
+    <body>
+        <header>
+      <a href="/" class="logo"><img
+        src="{% static './src/images/logo_sdb.png' %}"
+        alt="Logo"
+        width="70"
+      /></a>
+      <input type="checkbox" id="menu-bar">
+      <label for="menu-bar">Menu</label>
+      <nav class="navbar">
+        <ul>
+          <li><a href="/">ГЛАВНАЯ</a></li>
+          <li><a href="/">ПАРТНЁРЫ</a>
+            <ul>
+              <li><a href="/">...</a></li>
+              <li><a href="/">...</a></li>
+            </ul>
+            </li>
+          <li><a href="#">ИНВЕСТОРАМ</a>
+            <ul>
+              <li><a href="/">Принципы привлечения ресурсов</a></li>
+              <li><a href="/">Долговые инструменты</a></li>
+              <li><a href="/">Синдицированное финансирование проектов</a></li>
+              <li><a href="/">Выпуски облигаций</a></li>
+              <li><a href="/">Другие инструменты</a></li>
+              <li><a href="/">Проекты для финансирования</a></li>
+              <li><a href="/">Раскрытие информации</a></li>
+              </ul>
+          <li><a href="/">ПРОЕКТЫ</a>
+          <ul>
+            <li><a href="{% url 'create' %}">Заявка на финансирование </a></li>
+          </ul>
+          </li>
+          <li><a href="/">МЕЖДУНАРОДНОЕ СОТРУДНИЧЕСТВО</a>
+            <ul>
+              <li><a href="/">...</a></li>
+              <li><a href="/">...</a></li>
+            </ul>
+          <li><a href="">О БАНКЕ</a>
+          <ul>
+            <li><a href="/">...</a></li>
+            <li><a href="/">...</a></li>
+          </ul>
+          <li><a href="{% url 'news_home' %}">НОВОСТИ</a></li>
+        </ul>
+      </nav>
+      <ul class="footer__socialss">
+            <a href="https://www.instagram.com/apiu_kyrgyzrepublic/?hl=ru&ysclid=ld3zzcxdya991181283/" target="_blank">
+                <img class="footer__icon" src="{% static './src/images/icons/free-icon-instagram.png' %}" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/pg/apiu2019/posts/" target="_blank">
+                <img class="footer__icon" src="{% static './src/images/icons/free-icon-facebook.png' %}" alt="Facebook">
+            </a>
+          <a href="https://www.youtube.com/@apiu6342/" target="_blank">
+              <img class="footer__icon" src="{% static './src/images/icons/free-icon-youtube-3938026.png' %}" alt="Youtube">
+          </a>
+        <a href="https://wa.me/701665625" target="_blank">
+            <img class="footer__icon" src="{% static './src/images/icons/whatsapp.png' %}" alt="Whatsapp">
+        </a>
+        <a href="https://t.me/apiu2019/" target="_blank">
+            <img class="footer__icon" src="{% static './src/images/icons/telegram.png' %}" alt="Telegram">
+        </a>
+    </ul>
+    <p>
+      <br><b>Контакт</b><br>
+      <em> 0 (312) 66-56-25</em><br> 
+      <em> 0 (312) 97-59-74</em><br> 
+      </p>
+    </header>
+    </div>
+
+    {% block content %}
+
+    
+     {% endblock %}
+   
+    <footer id="footer" class="footer">
+      <div class="container">
+          <div class="footer__content">
+              <div class="header__top-logo">
+                <div class="mapouter">
+                  <div class="gmap_canvas">
+                  <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=190&amp;hl=en&amp;q=Gruppa Kompaniy Bio-Agro, 96 Kiev St, Bishkek, Kyrgyzstan&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                  </iframe>
+                  <a href="https://www.gachacute.com/">www.gachacute.com</a>
+                </div>
+                <style>.mapouter{position:relative;text-align:right;width:600px;height:190px;}.gmap_canvas 
+                  {overflow:hidden;background:none!important;width:600px;height:190px;}.gmap_iframe 
+                  {width:600px!important;height:190px!important;}
+                </style>
+                </div>   
+              </div>
+    <div class="footer__info">
+      <p class="footer__address">{% trans 'Адрес: Кыргызская Республика г. Бишкек, ул. Киевская № 96а 5-этаж' %}</p>
+      <p>{% trans 'Телефон:' %}  +996 (312) 66-56-25, 0 (312) 97-59-74, (701) 66-56-25</p>
+      <p class="footer__email">Email: office@apiu.kg</p>
+      <ul class="footer__socials">
+              <a href="https://www.instagram.com/apiu_kyrgyzrepublic/?hl=ru&ysclid=ld3zzcxdya991181283/" target="_blank">
+                  <img class="footer__icon" src="{% static './src/images/icons/free-icon-instagram.png' %}" alt="Instagram">
+              </a>
+              <a href="https://www.facebook.com/pg/apiu2019/posts/" target="_blank">
+                  <img class="footer__icon" src="{% static './src/images/icons/free-icon-facebook.png' %}" alt="Facebook">
+              </a>
+              <a href="https://www.youtube.com/@apiu6342/" target="_blank">
+                  <img class="footer__icon" src="{% static './src/images/icons/free-icon-youtube-3938026.png' %}" alt="Youtube">
+              </a>
+              <a href="https://wa.me/701665625" target="_blank">
+                <img class="footer__icon" src="{% static './src/images/icons/whatsapp.png' %}" alt="Whatsapp">
+            </a>
+            <a href="https://t.me/apiu2019/" target="_blank">
+                <img class="footer__icon" src="{% static './src/images/icons/telegram.png' %}" alt="Telegram">
+            </a>
+      </ul>
+  </div>
+</div>
+
+</div>
+<div class="footer__bottom">
+Copyright 2022 {% trans 'Отдел рализации сельскохозяйственных проектов' %}
+</div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script src="{% static './src/js/main.js' %}"  defer></script>
+    <script src="{% static './src/js/index.js' %}"  defer></script>
+    <script src="{% static './src/js/main1.js' %}"  defer></script>
+    <script src="{% static './src/js/news.js' %}"  defer></script>
+    <script src="{% static './src/js/main4.js' %}"  defer></script>
+    <script src="{% static './src/js/swiper-bundle.min.js' %}"  defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+
+   
+    
+  </body>
+</html>

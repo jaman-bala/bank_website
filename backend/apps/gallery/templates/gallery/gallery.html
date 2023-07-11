@@ -1,0 +1,59 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{% load static %}
+ {% load i18n %}
+
+
+<gallery>
+    <section class="library">
+        <div class="container">
+            <div class="library__top">
+                <form class="example"  style="margin:auto;max-width:300px">
+                    <input type="text" placeholder="Search.." name="q">
+                    <button type="submit"><i class="fa fa-search" alt="Search"></i></button>
+                  </form>
+            </div>
+           
+            
+            <div class="grid-container">
+                {% for ga in gallery %}
+                <div class="item">
+                    <a href="{% url 'gallery_detail' ga.id %}">
+                        <img src="{{ ga.photo_add.url }}" alt="image"></a>
+                        <p>
+                            <b>{{ ga.country}}</b><br>
+                            {{ ga.title}}<br>
+                            <em><i class="fas fa-calendar"></i>{{ga.date}}</em><br>
+                        </p>
+                    </div>
+                {% endfor %}
+              </div>
+                <div class="paggin">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            {% if page_obj.has_previous %}
+                            <li class="page-item">
+                            <a class="page-link" href="?page={{page_obj.previous_page_number}}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                            </li>
+                            {% endif %}
+                            <li class="page-item"><a class="page-link" href="?page={{page_obj.number}}">{{page_obj.number}}</a></li>
+                            <li class="page-item">
+                            {% if page_obj.has_next %}
+                            <a class="page-link" href="?page={{page_obj.next_page_number}}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                            {% endif %}
+                            </li>
+                        </ul>
+                        </nav>
+                </div>
+            </div>
+    </section>
+</gallery>
+
+
+
+
+  {%endblock%}

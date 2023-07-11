@@ -1,0 +1,104 @@
+{% extends 'main/base.html' %} {% block content %} {% load static %}
+{% load i18n %}
+
+
+
+  <section class="section__one">
+    {%for photo in photos%}
+    <div class="container__one">
+      <img src="{{ photo.img1.url }}" alt="" class="container__img">
+     <h1 class="container__img__h1">{{photo.title}}</h1>
+      <a href="{% url 'news_home' %}"> <button class="container__img__btn">Новости</button></a>
+    </div>
+    {% endfor %}
+  </section>
+  <section class="section__two">
+    <div class="container__news">
+      <div class="news__cards__baisal">
+        {% for el in news %}
+       <div class="card__new">
+          <div class="card__new__img">
+            <a href="{% url 'news_detail' el.id %}">
+            <img src="{{ el.img.url }}" alt="News" class="news__img">
+          </a>
+             <h3 class="card__new__title">{{ el.title|truncatechars:35}}</h3>
+           <h6 class="new__description__p">{{ el.full_text|truncatechars:45|safe }}</h6>
+          </div>
+       </div>
+       {% endfor %}
+      </div>
+    </div>
+   
+  </section>
+  <section class="section__there">
+    <div class="div">
+    <div class="container__gallery">
+      <div class="gallery__box">
+        <h2 class="gallery__box__h2">
+          <a href="{% url 'gallery' %}" class="gallery__box__h2__a">
+          Галерия
+        </a>
+        </h2>
+        {% for galleries in gallery %}
+        <div class="gallery__box__img">
+          <a href="{% url 'gallery_detail' galleries.id %}">
+          <img src="{{ galleries.photo_add.url }}" alt="" class="gallery__img">
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="gallery__box__vid">
+        <h2 class="gallery__box__h2">
+            <a href="{% url 'video' %}" class="gallery__box__h2__a">
+            Видео Галерия
+         </a>
+        </h2>
+        {% for videos in video  %}
+        <div class="gallery__box__video">
+          <a href="{{ videos.url}}" target="_blank">
+          <iframe src="{{ videos.url}}"  class="video__iframe">
+          </iframe> 
+        </a>
+        </div>
+        {% endfor %} 
+      </div>
+      
+     </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+<main2>
+    <h1 class="text-center">Наши партнеры</h1>
+  <div class="container-box">
+            <div class="box">
+              <a href="https://agro.gov.kg/ru/main/"><img src="{% static './src/images/msh2-2.png' %}" alt="img" /></a>
+            </div>
+              <div class="box">
+                <a href="https://www.aris.kg/index.php?option=com_content&view=category&layout=blog&id=8&Itemid=160&lang=ru"> <img src="{% static './src/images/arislogo.png' %}" alt="img" ></a>
+              </div>
+            <div class="box">
+              <a href="https://www.ifad.org/en/"><img src="{% static './src/images/ifad.png' %}" alt="img" /><a/>
+            </div>
+              <div class="box">
+                <a href="https://www.vsemirnyjbank.org/ru/home"><img src="{% static './src/images/wb.png' %}" alt="img" /></a>
+              </div>
+            <div class="box">
+              <a href="https://www.un.org/ru/"><img src="{% static './src/images/un-logo-big.png' %}" alt="img" /></a>
+            </div>
+  </div>
+</main2>
+
+
+
+{%endblock%}

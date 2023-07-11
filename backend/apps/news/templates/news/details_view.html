@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %} {% block content %} {% load static %}
+{% load i18n %}
+<div class="container">
+  <div class="container__detail">
+          <h1>{{ article.title }}</h1>
+          <p>
+            <em>{{ article.date }}</em>
+          </p>
+          <img src="{{ article.img.url }}" alt="img"/>
+          <div>
+          <p class="text-muted">{% autoescape off %}{{ article.full_text }}{% endautoescape %}</p>
+          <b>Прикреплённый файл: </b><a href="{{article.file.url}}" target="_blank"><i class="bi-file-earmark-arrow-down-fill" style="font-size: 24px;"> посмотреть</i></a>
+        </div>
+      </div>
+</div>
+
+{%endblock%}

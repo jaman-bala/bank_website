@@ -1,0 +1,47 @@
+{% extends 'main/base.html' %} {% load static %}
+
+{% block content %}
+
+<fon>
+   <div class="container">
+      <h1 class="ne">Новости</h1>
+      {% for el in news %}
+      <!--card with shadow-->
+        <article class="card__ca shadow">
+          <div>
+            <a href="{% url 'news_detail' el.id %}"><img src="{{ el.img.url }}" alt="image"></a>
+          </div>
+          <div>
+            <h5>{{ el.title}}</h5>
+            <p>{{ el.full_text|truncatechars:100|safe }}</p>
+            <span>
+              <i class="fas fa-calendar"></i>
+               Date - <time>{{el.date}}</time>
+             </span>
+             <div class="add"><a href="{% url 'news_detail' el.id %}" class="news__block-link"><button class="button__new">Подробнее</button></a></div>
+          </div>
+        </article>
+        {% endfor %}
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+              <a class="page-link" href="?page={{page_obj.previous_page_number}}" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            {% endif %}
+            <li class="page-item"><a class="page-link" href="?page={{page_obj.number}}">{{page_obj.number}}</a></li>
+            <li class="page-item">
+              {% if page_obj.has_next %}
+              <a class="page-link" href="?page={{page_obj.next_page_number}}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+              {% endif %}
+            </li>
+          </ul>
+        </nav>
+      </div>
+</fon>
+  
+{%endblock%}

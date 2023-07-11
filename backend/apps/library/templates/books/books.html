@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{% load static %}
+ {% load i18n %}
+<library>
+    <section class="library">
+        <div class="container">
+            <div class="library__top">
+                <h2 class="title">Библиотека</h2>
+                <form class="example"  style="margin:auto;max-width:300px">
+                    <input type="text" placeholder="Search.." name="q">
+                    <button type="submit"><i class="fa fa-search" alt="Search"></i></button>
+                  </form>
+            </div>
+            <div class="library__row">
+                {% for book in books %}
+                <div class="library__block">
+                    {% if book.image %}
+                    <div class="library__block-img">
+                        <img src="{{book.image.url}}" alt="News">
+                    </div>
+                    {% endif %}
+                    <h3 class="library__block-title">{{book.title}}</h3>
+                    <p class="library__block-ti">автор: {{book.author}}</p>
+                       <button class="btn__btn" type="button">
+                           <a href="{{book.books.url}}" target="_blank">
+                               Открыть
+                            </a>
+                       </button>
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+    </section>
+</library>
+
+
+
+
+
+  {%endblock%}
