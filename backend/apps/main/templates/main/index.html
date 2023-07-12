@@ -47,7 +47,8 @@
         </div>
         {% endfor %}
       </div>
-      <div class="gallery__box__vid">
+      
+      {% comment %} <div class="gallery__box__vid">
         <h2 class="gallery__box__h2">
             <a href="{% url 'video' %}" class="gallery__box__h2__a">
             Видео Галерия
@@ -61,7 +62,7 @@
         </a>
         </div>
         {% endfor %} 
-      </div>
+      </div> {% endcomment %}
       
      </div>
     </div>
@@ -81,7 +82,7 @@
 <main2>
     <h1 class="text-center">Наши партнеры</h1>
   <div class="container-box">
-            <div class="box">
+            {% comment %} <div class="box">
               <a href="https://agro.gov.kg/ru/main/"><img src="{% static './src/images/msh2-2.png' %}" alt="img" /></a>
             </div>
               <div class="box">
@@ -89,7 +90,7 @@
               </div>
             <div class="box">
               <a href="https://www.ifad.org/en/"><img src="{% static './src/images/ifad.png' %}" alt="img" /><a/>
-            </div>
+            </div> {% endcomment %}
               <div class="box">
                 <a href="https://www.vsemirnyjbank.org/ru/home"><img src="{% static './src/images/wb.png' %}" alt="img" /></a>
               </div>

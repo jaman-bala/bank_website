@@ -6,7 +6,13 @@ from django.forms import ModelForm, TextInput, DateTimeInput, Textarea, FileInpu
 class CreateForm(ModelForm):
     class Meta:
         model = Create
-        fields = ['first_name', 'last_name', 'email', 'city' ,'phone', 'title', 'text', 'file']
+        fields = ['organ_name', 'inn', 'organizations', 'sector' ,'region', 
+        'city', 'adress', 'supervisor_last_name', 'supervisor_first_name', 'supervisor_middle_name', 
+        'supervisor_job_title', 'supervisor_phone', 'file_before', 'file_rear', 'last_name', 'first_name', 
+        'middle_name', 'job_title', 'phone', 'email', 'requested_amount', 'credit_term', 'target_direction', 
+        'own_contribution', 'desired_schedule', 'doc_title', 'location', 'indicative', 'owner', 'file', 
+        'business_plan', 'financial_statements', 'certificate', 'founding_document', 'entitlement', 
+        'is_active', 'is_actives']
 
         widgets = {
             "first_name": TextInput(attrs={
@@ -29,14 +35,8 @@ class CreateForm(ModelForm):
 
                 'placeholder': 'Адрес'
             }),
-            "title": TextInput(attrs={
 
-                'placeholder': 'Вопроса'
-            }),
-            "text": Textarea(attrs={
 
-                'placeholder': 'Введите свой вопрос'
-            }),
             "file": FileInput(attrs={
 
                 'placeholder': 'Файл'

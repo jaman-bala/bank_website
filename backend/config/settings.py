@@ -8,9 +8,10 @@ from easy_thumbnails.conf import Settings as thumbnail_settings
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_ROOT = os.path.normpath(os.path.dirname(__file__))
 SECRET_KEY = 'django-insecure-=@0k%^7cdpu7cq9=yu16&(2t-xqa$(6)gehker8awr@*2b03t'
 
-DEBUG = True
+DEBUG = os.getenv("DEBUG", default=True)
 ALLOWED_HOSTS = ["*"]
 
 
@@ -24,19 +25,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # APP
-    'backend.apps.tender',
-    'backend.apps.cloude',
     'backend.apps.news',
     'backend.apps.online',
     'backend.apps.library',
-    'backend.apps.account',
     'backend.apps.project',
     'backend.apps.main',
     'backend.apps.gallery',
     
     # Dependencies
     'ckeditor',
-    'minio_storage',
+    # 'minio_storage',
 
 ]
 
@@ -153,15 +151,15 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # STOREGE
-DEFAULT_FILE_STORAGE = "minio_storage.storage.MinioMediaStorage"
-MINIO_STORAGE_ENDPOINT = '10.11.11.8:9000'
-MINIO_STORAGE_ACCESS_KEY = 's3igtWTcQqq2uyp7'
-MINIO_STORAGE_SECRET_KEY = 'DozBIJDceDimmGHLwUaMDiX8j13bF2oM'
-MINIO_STORAGE_USE_HTTPS = False
-MINIO_STORAGE_MEDIA_BUCKET_NAME = 'media'
-MINIO_STORAGE_AUTO_CREATE_MEDIA_BUCKET = True
-MINIO_STORAGE_STATIC_BUCKET_NAME = 'static'
-MINIO_STORAGE_AUTO_CREATE_STATIC_BUCKET = True
+# DEFAULT_FILE_STORAGE = "minio_storage.storage.MinioMediaStorage"
+# MINIO_STORAGE_ENDPOINT = '10.11.11.8:9000'
+# MINIO_STORAGE_ACCESS_KEY = 's3igtWTcQqq2uyp7'
+# MINIO_STORAGE_SECRET_KEY = 'DozBIJDceDimmGHLwUaMDiX8j13bF2oM'
+# MINIO_STORAGE_USE_HTTPS = False
+# MINIO_STORAGE_MEDIA_BUCKET_NAME = 'media'
+# MINIO_STORAGE_AUTO_CREATE_MEDIA_BUCKET = True
+# MINIO_STORAGE_STATIC_BUCKET_NAME = 'static'
+# MINIO_STORAGE_AUTO_CREATE_STATIC_BUCKET = True
 
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'

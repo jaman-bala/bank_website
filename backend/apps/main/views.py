@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from .models import Photo
-from .staff import Staff
 from backend.apps.gallery.models import Video
 from ..gallery.models import Gallery
 from backend.apps.news.models import Articles
@@ -24,9 +23,8 @@ def about(request):
     return render(request, 'main/about.html')   
 
 
-def staff(request):
-    staff = Staff.objects.all()
-    context = {
-        "staff": staff,
-    }
-    return render(request, 'main/staff.html', context) 
+def finance(request):
+    return render(request, 'main/finance.html')
+
+def whoe(request):
+    return render(request, 'main/whole_funding.html')

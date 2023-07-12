@@ -92,8 +92,7 @@
     
 
 }
-.box__dir{
-}
+
 .direcrot__box img{
     width: 230px;
     height: 230px;
@@ -101,10 +100,10 @@
 }
 
 .table__employees {
-	width: 1250px;
+	width: 1000px;
 	border: none;
-    margin-top: 95px;
-	border-collapse: separate;
+    margin-top: 10px;
+
 }
 .table__employees thead th {
 	font-weight: bold;
@@ -121,9 +120,7 @@
 	border-right: 1px solid #ddd;
 
 }
-.table__employees thead tr th:first-child {
-	border-radius: 20px 0 0 0;
-}
+
 .table__employees thead tr th:last-child {
 	border-radius: 0 20px 0 0;
 }
@@ -147,29 +144,10 @@
 .table__employees tbody tr:last-child td:last-child {
 	border-radius: 0 0 20px 0;
 }
-.table__h4{
-	text-align: center;
-	font: 400 40px/90%'Mono';
-}
 .table__employees td{
-	font: 400 25px/90%'Mono' !important;
-	padding: 20px !important;
+	font: 400 15px/90%'Mono' !important;
+
 	border-left: 1px solid #ddd !important;
-}
-.table__employees td:nth-child(2){
-	padding-top: 100px !important;
-}
-.table__employees td:nth-child(3){
-	padding-top: 100px !important;
-}
-.table__employees td:nth-child(4){
-	padding-top: 100px !important;
-}
-.table__employees td:nth-child(5){
-	padding-top: 100px !important;
-}
-.table__employees td:nth-child(6){
-	padding-top: 100px !important;
 }
 
 .table__employees th{
