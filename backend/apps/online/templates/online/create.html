@@ -1,4 +1,4 @@
-{% extends 'main/base.html' %} {% load static %} {% block content %}
+p{% extends 'main/base.html' %} {% load static %} {% block content %}
 
 <div class="container">
     <div class="form-floating mb-3">
@@ -8,17 +8,138 @@
                     <form action="." method="POST">
                       {% csrf_token %}
                       <div class="container__forms">
+
+                        <p class="form__text">Информация об организации</p>
+
                   <div class="row__forms">
                     <div class="col-25">
-                      <label for="fname">Имя</label>
+                      <label for="fname">Наименование*</label>
                     </div>
                     <div class="col-75">
-                      {{ form.first_name }}
+                      {{ form.organ_name }}
                     </div>
                   </div>
                   <div class="row__forms">
                     <div class="col-25">
-                      <label for="lname">Фамилия</label>
+                      <label for="fname">ИНН*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.inn }}
+                    </div>
+                  </div>
+
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="lname">Организационно-правовая форма*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.organizations}}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="lname">Отрасль/Сектор*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.sector}}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="lname">Область*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.region}}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Город/Село*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.city }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Адрес*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.adress }}
+                    </div>
+                  </div>
+
+                  <p class="form__text">Информация о руководителе</p>
+
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Фамилия*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.supervisor_last_name }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Имя*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.supervisor_first_name }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Отчество</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.supervisor_middle_name }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Должность*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.supervisor_job_title }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Номер телефона*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.supervisor_phone }}
+                    </div>
+                  </div>
+
+                  <p class="form__text">Загрузить скрин паспорта руководителя<br>
+                    Загружать можно файлы только в формате pdf, jpg, png
+                    </p>
+
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="lname">Лицевая сторона паспорта*</label>
+                    </div>
+                    <div class="col-75">
+                      <img class="footer__icon" src="{% static './src/images/icons/file.png' %}" alt="Search">
+                      {{ form.file_before }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="lname">Обратная сторона паспорта*</label>
+                    </div>
+                    <div class="col-75">
+                      <img class="footer__icon" src="{% static './src/images/icons/file.png' %}" alt="Search">
+                      {{ form.file_rear }}
+                    </div>
+                  </div>
+
+                  <p class="form__text">Контактное лицо</p>
+
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Фамилия*</label>
                     </div>
                     <div class="col-75">
                       {{ form.last_name }}
@@ -26,44 +147,58 @@
                   </div>
                   <div class="row__forms">
                     <div class="col-25">
-                      <label for="lname">Номер телефона</label>
+                      <label for="fname">Имя*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.first_name }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Отчество*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.middle_name }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Должность*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.job_title }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Номер телефона*</label>
                     </div>
                     <div class="col-75">
                       {{ form.phone }}
                     </div>
-                  </div> 
-                  <div class="row__forms">
-                    <div class="col-25">
-                      <label for="lname">Почта</label>
-                    </div>
-                    <div class="col-75">
-                      {{ form.email  }}
-                    </div>
                   </div>
                   <div class="row__forms">
                     <div class="col-25">
-                      <label for="lname">Адрес проживания</label>
+                      <label for="fname">Почта*</label>
                     </div>
                     <div class="col-75">
-                      {{ form.city   }}
+                      {{ form.email }}
                     </div>
                   </div>
+
+                  <p class="form__text">Информация о кредите</p>
+
                   <div class="row__forms">
                     <div class="col-25">
-                      <label for="lname">Тема вопроса</label>
+                      <label for="fname">Запрашиваемая сумма*</label>
                     </div>
                     <div class="col-75">
-                      {{ form.title   }}
+                      {{ form.requested_amount }}
                     </div>
                   </div>
-                  <div class="row__forms">
-                    <div class="col-25">
-                      <label for="subject">Вопрос</label>
-                    </div>
-                    <div class="col-75">
-                      {{ form.text }}
-                    </div>
-                  </div>
+
+
+                  
                   <div class="row__forms">
                     <div class="col-25">
                       <label for="lname">Прикрепить файл</label>

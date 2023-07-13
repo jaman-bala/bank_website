@@ -1,5 +1,8 @@
 from .models import Create
-from django.forms import ModelForm, TextInput, DateTimeInput, Textarea, FileInput
+from django.forms import (ModelForm, TextInput, 
+                          DateTimeInput, Textarea, 
+                          FileInput, Select, DecimalField, 
+                          EmailInput, IntegerField)
 
 
 
@@ -15,32 +18,97 @@ class CreateForm(ModelForm):
         'is_active', 'is_actives']
 
         widgets = {
-            "first_name": TextInput(attrs={
+                #Информация об организации
+            "organ_name": TextInput(attrs={
               
-                'placeholder': 'Имя'
+                'placeholder': 'Наименование хозяйствующего субъекта'
             }),
-            "last_name": TextInput(attrs={
-    
-                'placeholder': 'Фамилия'
+            "inn": TextInput(attrs={
+              
+                'placeholder': 'ИНН'
             }),
-            "phone": TextInput(attrs={
-
-                'placeholder': '+996 '
+            "organizations": Select(attrs={
+              
+                'placeholder': 'Организационно-правовая форма'
             }),
-            "email": TextInput(attrs={
-
-                'placeholder': 'Адрес электронной почты'
+            "sector": Select(attrs={
+              
+                'placeholder': 'Отрасль/Сектор'
+            }),
+            "region": Select(attrs={
+              
+                'placeholder': 'Область'
             }),
             "city": TextInput(attrs={
-
+              
+                'placeholder': 'Город/Село'
+            }),
+            "adress": TextInput(attrs={
+              
                 'placeholder': 'Адрес'
             }),
 
 
-            "file": FileInput(attrs={
-
-                'placeholder': 'Файл'
+                #Информация о руководителе
+            "supervisor_last_name": TextInput(attrs={
+              
+                'placeholder': 'Фамилия'
+            }),
+            "supervisor_first_name": TextInput(attrs={
+              
+                'placeholder': 'Имя'
+            }),
+            "supervisor_middle_name": TextInput(attrs={
+              
+                'placeholder': 'Отчество'
+            }),
+            "supervisor_job_title": TextInput(attrs={
+              
+                'placeholder': 'Должность'
+            }),
+            "supervisor_phone": TextInput(attrs={
+              
+                'placeholder': 'Номер телефона'
+            }),
+            "file_before": FileInput(attrs={
+              
+                'placeholder': 'file'
+            }),
+            "file_rear": FileInput(attrs={
+              
+                'placeholder': 'file'
             }),
 
+                #Контактное лицо
+             "last_name": TextInput(attrs={
+              
+                'placeholder': 'Фамилия'
+            }),
+            "first_name": TextInput(attrs={
+              
+                'placeholder': 'Имя'
+            }),
+            "middle_name": TextInput(attrs={
+              
+                'placeholder': 'Отчество'
+            }),
+            "job_title": TextInput(attrs={
+              
+                'placeholder': 'Должность'
+            }),
+            "phone": TextInput(attrs={
+              
+                'placeholder': 'Номер телефона'
+            }),
+            "email": EmailInput(attrs={
+              
+                'placeholder': 'Email'
+            }),
+
+
+            "requested_amount": IntegerField(attrs={
+              
+                'placeholder': 'Запрашиваемая сумма'
+            }),
 
         }

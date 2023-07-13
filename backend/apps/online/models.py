@@ -59,7 +59,7 @@ class Create(models.Model):
     phone = models.DecimalField("Номер телефона", max_digits=255, decimal_places=0)
     email = models.EmailField("Почта")
 
-    requested_amount = models.CharField("Запрашиваемая сумма", max_length=255)
+    requested_amount = models.IntegerField("Запрашиваемая сумма", max_length=255)
     credit_term = models.CharField("Срок кредита", max_length=255, default="")
     target_direction = models.CharField("Целевое направление кредита", max_length=255)
     own_contribution = models.CharField("обственный вклад в денежном выражении", max_length=255)
