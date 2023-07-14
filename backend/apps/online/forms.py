@@ -2,7 +2,7 @@ from .models import Create
 from django.forms import (ModelForm, TextInput, 
                           DateTimeInput, Textarea, 
                           FileInput, Select, DecimalField, 
-                          EmailInput, IntegerField)
+                          EmailInput, IntegerField, CheckboxInput)
 
 
 
@@ -105,10 +105,76 @@ class CreateForm(ModelForm):
                 'placeholder': 'Email'
             }),
 
-
-            "requested_amount": IntegerField(attrs={
+                #Информация о кредите
+            "requested_amount": TextInput(attrs={
               
                 'placeholder': 'Запрашиваемая сумма'
+            }),
+            "credit_term": TextInput(attrs={
+              
+                'placeholder': 'Срок кредита'
+            }),
+            "target_direction": TextInput(attrs={
+              
+                'placeholder': 'Целевое направление кредита'
+            }),
+            "own_contribution": TextInput(attrs={
+              
+                'placeholder': 'Собственный вклад в денежном выражении'
+            }),
+            "desired_schedule": TextInput(attrs={
+              
+                'placeholder': 'Желаемый график погашения'
+            }),
+
+
+            "doc_title": TextInput(attrs={
+              
+                'placeholder': 'Наименование документа'
+            }),
+            "location": TextInput(attrs={
+              
+                'placeholder': 'Месторасположение'
+            }),
+            "indicative": TextInput(attrs={
+              
+                'placeholder': 'Ориентировочная оценочная стоимость'
+            }),
+            "owner": TextInput(attrs={
+              
+                'placeholder': 'Собственник'
+            }),
+            "file": FileInput(attrs={
+              
+                'placeholder': 'file'
+            }),
+            "business_plan": TextInput(attrs={
+              
+                'placeholder': 'Бизнес план'
+            }),
+            "financial_statements": TextInput(attrs={
+              
+                'placeholder': 'Финансовая отчетность'
+            }),
+            "certificate": TextInput(attrs={
+              
+                'placeholder': 'Свидетельство о госрегистрации'
+            }),
+            "founding_document": TextInput(attrs={
+              
+                'placeholder': 'Учредительный документ'
+            }),
+            "entitlement": TextInput(attrs={
+              
+                'placeholder': 'Правоустанавливающий'
+            }),
+            "is_active": CheckboxInput(attrs={
+              
+                'placeholder': 'Согласие'
+            }),
+            "is_actives": CheckboxInput(attrs={
+              
+                'placeholder': 'Ознакомлен'
             }),
 
         }

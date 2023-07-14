@@ -56,4 +56,12 @@
            column-gap: 20px;
 
 } 
-  
+
+.footers__text {
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.footers__text a {
+  color: #fff;
+}

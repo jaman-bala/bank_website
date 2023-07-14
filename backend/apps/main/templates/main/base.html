@@ -53,8 +53,8 @@
             <ul>
               <li><a href="{% url 'finances' %}">Прямое финансирование проектов </a></li>
               <li><a href="{% url 'whoe' %}">Целевое финансирование через Банки партнеры</a></li>
-              <li><a href="/">Софинансирование проектов</a></li>
-              <li><a href="/">Заявка на финансирование</a></li>
+              <li><a href="{% url 'co' %}">Софинансирование проектов</a></li>
+              <li><a href="{% url 'create' %}">Заявка на финансирование </a></li>
             </ul>
             </li>
           <li><a href="/">ПАРТНЁРЫ</a>
@@ -75,36 +75,41 @@
               </ul>
           <li><a href="/">ПРОЕКТЫ</a>
           <ul>
-            <li><a href="{% url 'create' %}">Заявка на финансирование </a></li>
+            <li><a href="{% url 'online' %}">Реализованные проекты</a></li>
+            <li><a href="/">Проекты на стадии реализации</a></li>
           </ul>
           </li>
           <li><a href="/">МЕЖДУНАРОДНОЕ <br> СОТРУДНИЧЕСТВО</a>
             <ul>
-              <li><a href="/">...</a></li>
+              <li><a href="{% url 'cooperations' %}">Информация для сайта</a></li>
               <li><a href="/">...</a></li>
             </ul>
           <li><a href="">О БАНКЕ</a>
           <ul>
-            <li><a href="/">...</a></li>
-            <li><a href="/">...</a></li>
+            <li><a href="{% url 'about' %}">История банка</a></li>
+            <li><a href="/">Основные стратегические направления</a></li>
+            <li><a href="/">Финансовая отчетность</a></li>
+            <li><a href="/">Проекты банка</a></li>
+            <li><a href="/">Карьера в банке</a></li>
+            <li><a href="/">Корпоративное управление</a></li>
           </ul>
           <li><a href="{% url 'news_home' %}">НОВОСТИ</a></li>
         </ul>
       </nav>
       <ul class="footer__socialss">
-            <a href="https://www.instagram.com/apiu_kyrgyzrepublic/?hl=ru&ysclid=ld3zzcxdya991181283/" target="_blank">
+            <a href="#" target="_blank">
                 <img class="footer__icon" src="{% static './src/images/icons/free-icon-instagram.png' %}" alt="Instagram">
             </a>
-            <a href="https://www.facebook.com/pg/apiu2019/posts/" target="_blank">
+            <a href="#" target="_blank">
                 <img class="footer__icon" src="{% static './src/images/icons/free-icon-facebook.png' %}" alt="Facebook">
             </a>
-          <a href="https://www.youtube.com/@apiu6342/" target="_blank">
+          <a href="#" target="_blank">
               <img class="footer__icon" src="{% static './src/images/icons/free-icon-youtube-3938026.png' %}" alt="Youtube">
           </a>
-        <a href="https://wa.me/701665625" target="_blank">
+        <a href="#" target="_blank">
             <img class="footer__icon" src="{% static './src/images/icons/whatsapp.png' %}" alt="Whatsapp">
         </a>
-        <a href="https://t.me/apiu2019/" target="_blank">
+        <a href="#" target="_blank">
             <img class="footer__icon" src="{% static './src/images/icons/telegram.png' %}" alt="Telegram">
         </a>
     </ul>
@@ -122,16 +127,21 @@
      {% endblock %}
    
     <footer id="footer" class="footer">
-      <div class="container">
           <div class="footer__content">
-              <div class="header__top-logo">
-                <div class="mapouter">
-                </div>   
-              </div>
+            <div class="footers__text">
+              <p>Закупки и Уведомления</p>
+              <p>Работа в ГБР</p>
+              <p>Политика обработки данных и Информация<br> 	
+                <a href="#">Политика обработки данных	<br></a>
+                <a href="#">Для клиентов	<br></a>
+                <a href="#">Для инвесторов	<br></a>
+                </p>
+            </div>
+
     <div class="footer__info">
       <p class="footer__address">{% trans 'Адрес: Кыргызская Республика г. Бишкек, ул. Киевская № 1 5-этаж' %}</p>
       <p>{% trans 'Телефон:' %}  +996 (312) 00-00-00, 0 (555) 00-00-00, (700) 00-00-00</p>
-      <p class="footer__email">Email: office@apiu.kg</p>
+      <p class="footer__email">email: office@sdb.kg</p>
       <ul class="footer__socials">
               <a href="#" target="_blank">
                   <img class="footer__icon" src="{% static './src/images/icons/free-icon-instagram.png' %}" alt="Instagram">
@@ -152,7 +162,7 @@
   </div>
 </div>
 
-</div>
+
 <div class="footer__bottom">
 Copyright 2022 {% trans 'Государственный банк развития Кыргызской Республики ' %}
 </div>

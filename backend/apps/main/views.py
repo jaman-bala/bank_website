@@ -28,3 +28,9 @@ def finance(request):
 
 def whoe(request):
     return render(request, 'main/whole_funding.html')
+
+def co_financing(request):
+    return render(request, "main/co_financing.html")
+
+def cooperations(request):
+    return render(request, "main/cooperation.html")

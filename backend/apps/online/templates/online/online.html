@@ -5,12 +5,12 @@
 
 <dir class="container">
   <div class="row">
-    <h1 align="center">Онлайн вопросы</h1>
+    <h1 align="center">Онлайн заявки</h1>
     
       {% if task%} {% for on in task%}
       <div class="alert alert-warning mt-2">
         <h2 style=margin-left:35px; > {{ on.title }}</h2>
-        <p>Вопрос: {{ on.text | truncatewords:10 }}</p>
+        <p>Наименование: {{ on.organ_name | truncatewords:10 }}</p>
         <p class="lead text-muted" style="font-size: 15px" align="right">
           <em>Имя: {{ on.first_name }} {{ on.last_name }}</em>
         </p>

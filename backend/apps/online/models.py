@@ -62,7 +62,7 @@ class Create(models.Model):
     requested_amount = models.IntegerField("Запрашиваемая сумма", max_length=255)
     credit_term = models.CharField("Срок кредита", max_length=255, default="")
     target_direction = models.CharField("Целевое направление кредита", max_length=255)
-    own_contribution = models.CharField("обственный вклад в денежном выражении", max_length=255)
+    own_contribution = models.CharField("Собственный вклад в денежном выражении", max_length=255)
     desired_schedule = models.CharField("Желаемый график погашения", max_length=255)
 
     doc_title = models.CharField("Наименование документа", max_length=255)
@@ -76,8 +76,8 @@ class Create(models.Model):
     certificate = models.CharField("Свидетельство о госрегистрации", max_length=255)
     founding_document = models.CharField("Учредительный документ", max_length=255)
     entitlement = models.CharField("Правоустанавливающий", max_length=255)
-    is_active = models.BooleanField("Согласие", default=True)
-    is_actives = models.BooleanField("Ознакомлен ", default=True)
+    is_active = models.BooleanField("Согласие", default=False)
+    is_actives = models.BooleanField("Ознакомлен ", default=False)
     created = models.DateField(verbose_name="Дата создание", auto_now_add=True)
 
 

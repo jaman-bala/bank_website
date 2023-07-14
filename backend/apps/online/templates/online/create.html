@@ -196,9 +196,73 @@ p{% extends 'main/base.html' %} {% load static %} {% block content %}
                       {{ form.requested_amount }}
                     </div>
                   </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Срок кредита*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.credit_term }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Целевое направление кредита*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.target_direction }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Собственный вклад в денежном выражении*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.own_contribution }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Желаемый график погашения*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.desired_schedule }}
+                    </div>
+                  </div>
 
+                  <p class="form__text">Залоговое обеспечение</p>
 
-                  
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Наименование документа*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.doc_title }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Месторасположение*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.location }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Ориентировочная оценочная стоимость*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.indicative }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Собственник*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.owner }}
+                    </div>
+                  </div>     
                   <div class="row__forms">
                     <div class="col-25">
                       <label for="lname">Прикрепить файл</label>
@@ -208,10 +272,71 @@ p{% extends 'main/base.html' %} {% load static %} {% block content %}
                       {{ form.file }}
                     </div>
                   </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Бизнес план*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.business_plan }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Финансовая отчетность*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.financial_statements }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Свидетельство о госрегистрации*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.certificate }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Учредительный документ*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.founding_document }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname">Правоустанавливающий/правоудостоверяющий/технический документ на залог*</label>
+                    </div>
+                    <div class="col-75">
+                      {{ form.entitlement }}
+                    </div>
+                  </div>
+                  <div class="row__forms">
+                    <div class="col-25">
+                      <label for="fname"></label>
+                    </div>
+                    <div class="form-check">
+                      {{ form.is_active }}
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Согласие на сбор и обработку персональных данных*
+                      </label>
+                    </div>
+                    <div class="col-25">
+                      <label for="fname"></label>
+                    </div>
+                    <div class="form-check">
+                      {{ form.is_actives }}
+                      <label class="form-check-label" for="flexCheckChecked">
+                        Ознакомлен и согласен с условиями предоставления финансирования ОАО<br> «Государственный Банк развития КР»
+                      </label>
+                    </div>                    
+                  </div>
+
                   </div>
                   <br>
                   <div class="row__forms">
-                    <input type="submit" value="Отправить">
+                    <input type="submit" value="Отправить заявку">
                   </div>
                   </form>
       </div>
