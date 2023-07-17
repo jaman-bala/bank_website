@@ -1,8 +1,8 @@
 version: "3.7"
 
 services:
-  apiu_app:
-    container_name: apiu_app
+  sdb_app:
+    container_name: sdb_app
     restart: always
     build:
       context: .
@@ -20,7 +20,7 @@ services:
       - db
 
   db:
-    container_name: apiu_db
+    container_name: sdb_db
     restart: always
     image: postgres:12.4-alpine
     volumes:
